@@ -1,6 +1,6 @@
 # ToDo App
 
-## [Open the app](https://containers-controller.herokuapp.com/)
+## [Open the app](https://to-do-app-et.netlify.app//)
 ## Setup Instructions
 ```
 cd frontend
