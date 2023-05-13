@@ -1,9 +1,10 @@
-import ToDoForm from './components/to-do-form';
+import ToDosContainer from './components/to-dos-container';
 
 function App() {
   return (
     <div>
-      <ToDoForm />
+      <h1>Todo App</h1>
+      <ToDosContainer />
     </div>
   );
 }
