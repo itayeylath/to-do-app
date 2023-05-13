@@ -1,21 +1,41 @@
 import { useState } from "react";
 import ToDoAddForm from "./to-do-add-form";
+import ToDo from "./to-do";
 
 const ToDosContainer = () => {
-    const [todos, setToDosData] = useState([]);
+    const [toDosData, setToDosData] = useState([]);
 
-    const addTodo = newToDo => {
-        if (!newToDo.text) {
+    // useEffect(() => {
+
+    //   }, [toDosData]);
+
+    const addTodo = element => {
+        if (!element.text) {
             //console.log("Input Empty!")
             return;
         }
-        setToDosData([newToDo, ...todos])
-        //console.log("newToDo: ",newToDo)
+        setToDosData([element, ...toDosData])
+        //console.log("newToDo: ", element)
     };
+
+    const deleteTodo = index => {
+
+        let newData = [];
+
+        for (let i = 0; i < toDosData.length; i++) {
+            console.log(index)
+            if (i !== index) {
+                newData.push(toDosData[i]);
+            }
+        }
+        setToDosData(newData);
+    };
+
 
     return (
         <div>
             <ToDoAddForm onAddSubmit={addTodo} />
+            <ToDo toDosData={toDosData} deleteTodo={deleteTodo} />
         </div>
     );
 };
